@@ -313,6 +313,7 @@
 	                  else
 	                     alert("관심동호회에" +text + "되었습니다.");
 	                  location.reload();
+	                  opener.location.reload();
 	               }
 	            });
 	         }
@@ -345,6 +346,7 @@
                  else
                     alert(text + " 하셨습니다.");
                  location.reload();
+                 opener.location.reload();
               }
            });
            
@@ -362,7 +364,7 @@
 		$.ajax({
 			contentType:"application/JSON",
 			type:"POST",
-			url:"<%=request.getContextPath()%>/"+upndown+"check?mem_id=${member.mem_id}&club_no="+club_no,
+			url:"<%=request.getContextPath()%>/"+upndown+"check?mem_id=${loginUser.mem_id}&club_no="+club_no,
 			cache:false,
 			success:function(bool){
 				if(upndown=="up"){
@@ -372,6 +374,7 @@
 						alert('추천되었습니다.')
 				
 				location.reload();
+				opener.location.reload();
 				}
 				
 				else if(upndown=="down"){
@@ -380,6 +383,7 @@
 					else
 						alert('비추천되었습니다.');
 				location.reload();	
+				opener.location.reload();
 				}
 			}
 		});

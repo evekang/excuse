@@ -98,8 +98,7 @@ div.top {
 
                            <c:forEach var="cate1" items="${cateList}">
                               <c:if test="${!empty cateList }">
-                                 <option value="${cate1.cate_no }"
-                                    ${split[0] eq cate1.cate_name ? 'selected':''}>${cate1.cate_name }</option>
+                                 <option value="${cate1.cate_no }"  ${split[0] eq cate1.cate_name ? 'selected':''}>${cate1.cate_name }</option>
                               </c:if>
                            </c:forEach>
 
